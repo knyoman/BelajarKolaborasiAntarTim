@@ -16,6 +16,35 @@
             align-items: center;
             justify-content: center;
         }
+        .container {
+            background: rgba(255,255,255,0.85);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px #0002;
+            padding: 2.5em 3.5em;
+            text-align: center;
+            max-width: 400px;
+            margin: 2em;
+            position: relative;
+        }
+        .avatar-group {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 1.2em;
+        }
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            color: #fff;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 8px #0002;
+        }
         h1 {
             font-family: 'Montserrat', Arial, sans-serif;
             color: #333;
@@ -49,22 +78,81 @@
             position: absolute;
             left: 0;
         }
+        .footer {
+            margin-top: 2em;
+            color: #333a;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        .btn {
+            margin-top: 1.5em;
+            padding: 0.7em 2em;
+            background: linear-gradient(90deg, #74ebd5 0%, #ACB6E5 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+            cursor: pointer;
+            box-shadow: 0 2px 8px #0002;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #ACB6E5 0%, #74ebd5 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+        /* Animasi fade-in */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
         @media (max-width: 600px) {
             h1 { font-size: 1.5rem; }
+            .container { padding: 1em 0.5em; }
             ul { padding: 1em 1.2em; }
         }
     </style>
 </head>
 <body>
-    <h1>Projek Kolaborasi Antara Tim</h1>
-    <h3>Nama Anggota:</h3>
-    <ul>
-        <li>Nyoman</li>
-        <li>Denis</li>
-        <li>Rizky</li>
-        <li>Fadli</li>
-        <li>Rizal</li>
-        <li>Rizki</li>
-    </ul>
+    <div class="container fade-in">
+        <div class="avatar-group">
+            <div class="avatar" title="Nyoman">N</div>
+            <div class="avatar" title="Denis">D</div>
+            <div class="avatar" title="Rizky">R</div>
+            <div class="avatar" title="Fadli">F</div>
+            <div class="avatar" title="Rizal">Rz</div>
+            <div class="avatar" title="Rizki">Rk</div>
+        </div>
+        <h1>Projek Kolaborasi Antara Tim</h1>
+        <h3>Nama Anggota:</h3>
+        <ul>
+            <li>Nyoman</li>
+            <li>Denis</li>
+            <li>Rizky</li>
+            <li>Fadli</li>
+            <li>Rizal</li>
+            <li>Rizki</li>
+        </ul>
+        <button class="btn" onclick="showAlert()">Hubungi Tim</button>
+    </div>
+    <div class="footer">
+        &copy; 2025 Projek Kolaborasi | Dibuat dengan ❤️ oleh Tim Hebat
+    </div>
+    <script>
+        function showAlert() {
+            alert("Terima kasih telah menghubungi tim! Kami akan segera merespon.");
+        }
+        // Fade-in animasi untuk container
+        window.onload = () => {
+            document.querySelector('.container').classList.add('fade-in');
+        };
+    </script>
 </body>
 </html>
